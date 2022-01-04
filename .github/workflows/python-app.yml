@@ -28,9 +28,13 @@ jobs:
       run: |
         pip install pyinstaller
         pyinstaller --onefile main.py
+    - name: Bump version and push tag
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "dist/main.exe"
-        tag: ${{ env.GITHUB_RUN_NUMBER }}
         token: ${{ secrets.GITHUB_TOKEN }}
 

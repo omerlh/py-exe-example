@@ -28,5 +28,5 @@ jobs:
       run: |
         pip install pyinstaller
         pyinstaller --onefile main.py
-        ls -la
+        dir
 

@@ -28,5 +28,8 @@ jobs:
       run: |
         pip install pyinstaller
         pyinstaller --onefile main.py
-        dir
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "dist/main.exe"
+        token: ${{ secrets.GITHUB_TOKEN }}
 

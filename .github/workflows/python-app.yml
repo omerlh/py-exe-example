@@ -31,6 +31,6 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "dist/main.exe"
-        tag: $${{ env.GITHUB_RUN_NUMBER }}
+        tag: ${{ env.GITHUB_RUN_NUMBER }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
